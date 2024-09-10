@@ -35,42 +35,38 @@ CREATE TABLE Links (
 
 -- Cargar datos usando BULK INSERT
 BULK INSERT Movies
-FROM '/usr/src/app/data/movies.csv'
+FROM '/var/opt/mssql/app/data/movies.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
-    CODEPAGE = '65001',  -- UTF-8 encoding
     TABLOCK
 );
 
 BULK INSERT Ratings
-FROM '/usr/src/app/data/ratings.csv'
+FROM '/var/opt/mssql/app/data/ratings.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
-    CODEPAGE = '65001',
     TABLOCK
 );
 
 BULK INSERT Tags
-FROM '/usr/src/app/data/tags.csv'
+FROM '/var/opt/mssql/app/data/tags.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
-    CODEPAGE = '65001',
     TABLOCK
 );
 
 BULK INSERT Links
-FROM '/usr/src/app/data/links.csv'
+FROM '/var/opt/mssql/app/data/links.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
-    CODEPAGE = '65001',
     TABLOCK
 );
 GO
